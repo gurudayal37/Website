@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  script(src='//cdn.tinymce.com/4/tinymce.min.js')
+  script.
+    tinymce.init({ selector:'textarea',readonly:true,menubar:false,branding:false,toolbar:false,
+                      plugins: "autoresize",resize:false,autoresize_bottom_margin: 20});  
+  h1= article.title
+  h5 Written by #{author}
+  br
+  p Question
+  textarea #{article.question}
+  br
+  p Solution
+  textarea #{article.body}
+  hr
+  if user
+    if user.id ==article.author
+      a.btn.btn-default(href='/articles/edit/'+article._id) Edit 
+      a.btn.btn-danger.delete-article(href='#',data-id=article._id) Delete

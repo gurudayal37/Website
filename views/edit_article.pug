@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  script(src='//cdn.tinymce.com/4/tinymce.min.js')
+  script.
+    tinymce.init({ selector:'textarea',
+                branding:false,
+                plugins: "link autoresize",
+                link_context_toolbar: true,
+                link_assume_external_targets: true,
+                resize:false,
+                autoresize_bottom_margin: 20
+                });
+  h1 #{title}
+  form(method='POST', action='/articles/edit/'+article._id)
+    #form-group
+      label Title:
+      input.form-control(name='title', type='text', value=article.title)
+    #form-group
+      label Question:
+      textarea.form-control(name='question')= article.question
+    #form-group
+      label Body:
+      textarea.form-control(name='body')= article.body
+    br
+    input.btn.btn-primary(type='submit',value='Submit')
