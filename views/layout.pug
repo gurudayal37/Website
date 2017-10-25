@@ -5,6 +5,17 @@ html
     link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.css')
     link(rel='stylesheet' href='/css/style.css')
   body
+    script.
+      (function() {
+      var cx = '010917888866130986669:gs4hpuql5qe';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+      })();
+    gcse:search
     nav.navbar.navbar-inverse
       .container
         .navbar-header
