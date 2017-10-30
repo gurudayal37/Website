@@ -1,7 +1,7 @@
 # CodingGurus
 
-Coding Gurus is a web application for reading and posting Code. 
-A user needs to be registered and to logged in. Have a look-[CodingGurus](https://articlehub.herokuapp.com/).
+Coding Gurus is a web application for reading and posting Code.
+A user needs to be registered and logged in for posting a code. Have a look-[CodingGurus](https://articlehub.herokuapp.com/).
 
 ### Installattion
 
