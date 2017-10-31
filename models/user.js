@@ -16,6 +16,9 @@ var UserSchema=mongoose.Schema({
   password:{
     type:String,
     required:true
+  },
+  resetPasswordToken:{
+    type:String
   }
 });
 

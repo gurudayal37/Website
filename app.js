@@ -13,6 +13,8 @@ const User=require('./models/user.js');
 const app=express();
 const port=process.env.PORT || 3000;
 
+console.log(process.env);
+
 // mongoose.connect(config.database,{useMongoClient: true});
 // var db=mongoose.connection;
 // db.once('open',function(){

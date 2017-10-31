@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1 Reset Password
+  form(method='POST',action='/users/reset/'+token)
+    #form-group
+      label New Password:
+      input.form-control(name='password',type='password',placeholder='Enter password')
+    #form-group
+      label Confirm Password:
+      input.form-control(name='confirm',type='password',placeholder='Confirm Password')
+    br
+    input.btn.btn-primary(type='submit',value='Submit')
