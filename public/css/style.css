@@ -9,3 +9,13 @@
   background-color: #dff0d8;
   border-color: #d6e9c6;
 }
+
+.SearchBox {
+}
+
+ .center {
+   background-color: #dff0d8;
+     margin: auto;
+     width: 40%;
+     height: .5px;
+ }

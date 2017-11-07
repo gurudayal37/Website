@@ -2,20 +2,9 @@ doctype html
 html
   head
     title Coding Gurus
-    link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.css')
-    link(rel='stylesheet' href='/css/style.css')
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
+    link(rel='stylesheet', href='/css/style.css')
   body
-    script.
-      (function() {
-      var cx = '010917888866130986669:gs4hpuql5qe';
-      var gcse = document.createElement('script');
-      gcse.type = 'text/javascript';
-      gcse.async = true;
-      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(gcse, s);
-      })();
-    gcse:search
     nav.navbar.navbar-inverse
       .container
         .navbar-header
@@ -29,17 +18,13 @@ html
           ul.nav.navbar-nav
             li
               a(href='/') Home
-              li
-                a(href='/articles/add') Contribute Article
+            li
+              a(href='/articles/add') Contribute Article
           ul.nav.navbar-nav.navbar-right
-            if user
-              li 
-                a(href='/users/logout') Logout
-            else
-              li
-                a(href='/users/register') Register
-              li
-                a(href='/users/login') Login
+            li
+              a(href='/users/register') Register
+            li
+              a(href='/users/login') Login
     .container
       != messages('message', locals)
       if errors
@@ -49,11 +34,10 @@ html
       br
       hr
       footer
-        
         .text-center
-          p Copyright &copy; 2017
+          p Copyright © 2017
           a(href='https://github.com/gurudayal37', target='_blank')
-                img.img-rounded(src='https://cdn0.iconfinder.com/data/icons/octicons/1024/mark-github-128.png', width='32px', height='32px')
-    script(src='/bower_components/jquery/dist/jquery.js')  
+            img.img-rounded(src='https://cdn0.iconfinder.com/data/icons/octicons/1024/mark-github-128.png', width='32px', height='32px')
+    script(src='/bower_components/jquery/dist/jquery.js')
     script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
-    script(src='/js/main.js')  
+    script(src='/js/main.js')
