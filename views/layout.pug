@@ -1,23 +1,10 @@
 doctype html
 html
   head
-    title Coding Gurus
-    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
-    link(rel='stylesheet', href='/css/style.css')
+    title Knowledgebase
+    link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.css')
+    link(rel='stylesheet' href='/css/style.css')
   body
-    header.header.clearfix
-      .container
-        nav
-          ul.nav.nav-pills.float-right
-            li.nav-item
-              a.nav-link.active(href='#')
-                | Home 
-                span.sr-only (current)
-            li.nav-item
-              a.nav-link(href='#') About
-            li.nav-item
-              a.nav-link(href='#') Contact
-        h3.text-muted Project name
     nav.navbar.navbar-inverse
       .container
         .navbar-header
@@ -26,19 +13,24 @@ html
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.navbar-brand(href='/') CodingGurus
+          a.navbar-brand(href='/') CodinGurus
         #navbar.collapse.navbar-collapse
           ul.nav.navbar-nav
             li
               a(href='/') Home
-            li
-              a(href='/articles/add') Contribute Article
+            if user
+              li
+                a(href='/articles/add') Contribute Article
           ul.nav.navbar-nav.navbar-right
-            li
-              a(href='/users/register') Register
-            li
-              a(href='/users/login') Login
-    .jumbotron
+            if user
+              li 
+                a(href='/users/logout') Logout
+            else
+              li
+                a(href='/users/register') Register
+              li
+                a(href='/users/login') Login
+    .container
       != messages('message', locals)
       if errors
         each error, i in errors
@@ -47,10 +39,7 @@ html
       br
       hr
       footer
-        .text-center
-          p Copyright © 2017
-          a(href='https://github.com/gurudayal37', target='_blank')
-            img.img-rounded(src='https://cdn0.iconfinder.com/data/icons/octicons/1024/mark-github-128.png', width='32px', height='32px')
-    script(src='/bower_components/jquery/dist/jquery.js')
+        p Copyright &copy; 2017
+    script(src='/bower_components/jquery/dist/jquery.js')  
     script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
-    script(src='/js/main.js')
+    script(src='/js/main.js')  
