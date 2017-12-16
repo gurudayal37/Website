@@ -1,10 +1,28 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
+const passport = require('passport');
 // Article Model
 let Article = require('../models/article');
 // User Model
 let User = require('../models/user');
+
+//confirm get route
+router.get('/confirm',function(req,res){
+   res.render('confirm',{
+     title:'Confirm'
+   });
+});
+
+//confirm route
+router.post('/confirm',function(req,res,next){
+  req.body.username='gurudayal37'
+  passport.authenticate('local', {
+    successRedirect:'/articles/add',
+    failureRedirect:'/articles/confirm',
+    failureFlash: true
+  })(req, res, next);
+});
 
 // Add Route
 router.get('/add', ensureAuthenticated, function(req, res){
