@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1 Please enter your password to continue ...
+  form(method='POST', action='/articles/confirm')
+    #form-group
+      label Password:
+      input.form-control(name='password',type='password')
+    br
+    input.btn.btn-primary(type='submit',value='Sign in')
+    a.btn.btn-warning(href='/users/forgot',style="margin-left:20px;") Forgot Password

@@ -19,3 +19,9 @@
      width: 40%;
      height: .5px;
  }
+
+ .divider{
+     width:10px;
+     height:auto;
+     display:inline-block;
+ }
