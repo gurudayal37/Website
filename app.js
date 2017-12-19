@@ -5,6 +5,7 @@ const expressValidator=require('express-validator');
 const flash=require('connect-flash');
 const session=require('express-session');
 const passport=require('passport');
+require ('mongoose-pagination');
 
 const mongoose=require('./db/mongoose');
 const Article=require('./models/article.js');
@@ -65,7 +66,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.get('*', function(req, res, next){
-  res.locals.user = req.user || null;
+  global.user = req.user || null;
   next();
 });
 
@@ -86,7 +87,7 @@ var articles=require('./routes/articles');
 var users=require('./routes/users');
 app.use('/articles',articles);
 app.use('/users',users);
-
+app.locals.moment = require('moment');
 app.listen(port,()=>{
   console.log(`Server is up on port ${port}`);
 });

@@ -1,24 +1,40 @@
 extends layout
 
 block content
-  .SearchBox.center
-    script.
-      (function() {
-      var cx = '010917888866130986669:gs4hpuql5qe';
-      var gcse = document.createElement('script');
-      gcse.type = 'text/javascript';
-      gcse.async = true;
-      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(gcse, s);
-      })();
-    gcse:search
-  br
-  br
-  br
-  br
+  //- .SearchBox.center
+  //-   script.
+  //-     (function() {
+  //-     var cx = '010917888866130986669:gs4hpuql5qe';
+  //-     var gcse = document.createElement('script');
+  //-     gcse.type = 'text/javascript';
+  //-     gcse.async = true;
+  //-     gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  //-     var s = document.getElementsByTagName('script')[0];
+  //-     s.parentNode.insertBefore(gcse, s);
+  //-     })();
+  //-   gcse:search
+  
+  //- if user
+  //-   button.btn.btn-primary(type='button', data-toggle='modal', data-target='#myModal' style='float:right;margin-right:20px' ) Contribute Article
+  //-   #myModal.modal.fade.text-left(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
+  //-       .modal-dialog(role='document')
+  //-         .modal-content
+  //-           .modal-header
+  //-             h4#exampleModalLabel.modal-title Please enter your password to continue ...
+  //-             button.close(type='button', data-dismiss='modal', aria-label='Close')
+  //-               span(aria-hidden='true') ×
+  //-           .modal-body
+  //-             form(method='POST', action='/articles/confirm')
+  //-               //- .form-group
+  //-               //-   input.form-control(name='username' type='text', placeholder='username', style='border:none')
+  //-               .form-group
+  //-                 input.form-control(name='password' type='password',placeholder='password',style='border:none')
+  //-               .form-group
+  //-                 input.btn.btn-primary(type='submit', value='Submit', style='float:right')
+  //-               br
   br
   h1 #{title}
+  hr
   ul.list-group
     each article, i in articles
       li.list-group-item

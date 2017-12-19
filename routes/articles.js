@@ -16,10 +16,10 @@ router.get('/confirm',function(req,res){
 
 //confirm route
 router.post('/confirm',function(req,res,next){
-  req.body.username='gurudayal37'
+  req.body.username=user.username;
   passport.authenticate('local', {
     successRedirect:'/articles/add',
-    failureRedirect:'/articles/confirm',
+    failureRedirect:'/',
     failureFlash: true
   })(req, res, next);
 });

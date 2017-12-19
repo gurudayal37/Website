@@ -18,11 +18,28 @@ html
           ul.nav.navbar-nav
             li
               a(href='/') Home
-            if user
-              li
-                a(href='/articles/confirm') Contribute Article
+            li
+              a(data-toggle='modal', data-target='#myModal', style='float:right;margin-right:20px') Contribute Article
+              #myModal.modal.fade.text-left(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
+                  .modal-dialog(role='document')
+                    .modal-content
+                      .modal-header
+                        h4#exampleModalLabel.modal-title Please enter your password to continue ...
+                        button.close(type='button', data-dismiss='modal', aria-label='Close')
+                          span(aria-hidden='true') ×
+                      .modal-body
+                        form(method='POST', action='/articles/confirm')
+                          //- .form-group
+                          //-   input.form-control(name='username' type='text', placeholder='username', style='border:none')
+                          .form-group
+                            input.form-control(name='password' type='password',placeholder='password',style='border:none')
+                          .form-group
+                            input.btn.btn-primary(type='submit', value='Submit', style='float:right')
+                          br                
           ul.nav.navbar-nav.navbar-right
             if user
+              li 
+                a(href='/') Welcome #{user.username}
               li 
                 a(href='/users/logout') Logout
             else
@@ -39,7 +56,12 @@ html
       br
       hr
       footer
-        p Copyright &copy; 2017
+        .container
+            .text-center
+              p Copyright &copy; #{moment().format('YYYY')}
+              a(href='https://github.com/gurudayal37', target='_blank')
+                img.img-rounded(src='https://cdn0.iconfinder.com/data/icons/octicons/1024/mark-github-128.png', width='32px', height='32px')
+        hr
     script(src='/bower_components/jquery/dist/jquery.js')  
     script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
     script(src='/js/main.js')  
