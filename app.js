@@ -87,7 +87,9 @@ var articles=require('./routes/articles');
 var users=require('./routes/users');
 app.use('/articles',articles);
 app.use('/users',users);
+
 app.locals.moment = require('moment');
+
 app.listen(port,()=>{
   console.log(`Server is up on port ${port}`);
 });
